@@ -115,3 +115,4 @@ export default {
     }
 };
 </script>
+<style lang="scss" src="../assets/css/_home.scss"></style>

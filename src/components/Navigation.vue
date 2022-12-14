@@ -51,3 +51,4 @@ export default defineComponent({
     }
 })
 </script>
+<style lang="scss" src="../assets/css/_navigation.scss"></style>
