@@ -1,0 +1,20 @@
+@import 'reset';
+
+
+@import 'home';
+@import 'navigation';
+
+html,
+body {
+    /* 背景黑 */
+    background-color: black;
+    width: 100vw;
+}
+
+a {
+    color: rgb(205, 205, 205);
+
+    &:hover {
+        color: #e7c547;
+    }
+}
