@@ -1,23 +1,7 @@
-"use strict";
-// const API_ORIGIN = process.env.VUE_APP_API_ORIGIN
-// const API_COMMON_PATH = process.env.VUE_APP_API_COMMON_PATH
-// const APPKEY = process.env.VUE_APP_APPKEY
-// const APPID = process.env.VUE_APP_APPID
+// 該檔案生成的方式可以在 Vue Ui 中的「設定」->「Vue Cli」->「公開路徑」找到。
 module.exports = {
-  lintOnSave: false,
-  publicPath: process.env.NODE_ENV === "production" ? "/vue-project/" : "/",
-  filenameHashing: false,
-
-  css: {
-    sourceMap: true,
-    loaderOptions: {},
-  },
-  devServer: {
-    proxy: {
-      "/api": {
-        target: "https://private-a3c4c8-painteraggregation.apiary-mock.com/",
-        changeOrigin: true,
-      },
-    },
-  },
+  // 預設狀況下，部署到 GitHub Pages 可能會無法顯示畫面
+  // 因此需要多設置該屬性
+  // 官方文件：https://cli.vuejs.org/zh/config/#publicpath
+  publicPath: './',
 };
