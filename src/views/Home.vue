@@ -5,12 +5,20 @@
                 <li v-for="(item, index) in items[0]">
                     <div class="header">
                         <div class="img">
-                            <a href="#">
+                            <router-link :to="{
+                                name: 'Book', params: { id: item.id, },
+                            }">
                                 <img :src="item.img_url" width="50" height="66" />
-                            </a>
+                            </router-link>
                         </div>
                         <div class="text">
-                            <div class="text1"><a href="">{{ item.name }}</a></div>
+                            <div class="text1">
+                                <router-link :to="{
+                                    name: 'Book', params: { id: item.id, },
+                                }">
+                                    {{ item.name }}
+                                </router-link>
+                            </div>
                             <div class="text2">{{ item.authoer }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
@@ -71,6 +79,7 @@ export default {
             [
                 [
                     {
+                        id: 0,
                         img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
                         name: '鍾情於你(校園H)',
                         authoer: "鹿時安",
@@ -78,6 +87,7 @@ export default {
                         update: "2022-11-24",
                         pagecount: "835頁"
                     }, {
+                        id: 0,
                         img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
                         name: '鍾情於你(校園H)',
                         authoer: "鹿時安",
@@ -85,6 +95,7 @@ export default {
                         update: "2022-11-24",
                         pagecount: "835頁"
                     }, {
+                        id: 0,
                         img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
                         name: '鍾情於你(校園H)',
                         authoer: "鹿時安",
@@ -92,6 +103,7 @@ export default {
                         update: "2022-11-24",
                         pagecount: "835頁"
                     }, {
+                        id: 0,
                         img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
                         name: '鍾情於你(校園H)',
                         authoer: "鹿時安",
@@ -99,6 +111,7 @@ export default {
                         update: "2022-11-24",
                         pagecount: "835頁"
                     }, {
+                        id: 0,
                         img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
                         name: '鍾情於你(校園H)',
                         authoer: "鹿時安",
@@ -115,4 +128,6 @@ export default {
     }
 };
 </script>
-<style lang="scss" src="../assets/css/_home.scss"></style>
+<style lang="scss" src="../assets/css/_home.scss" scoped>
+
+</style>

@@ -5,7 +5,7 @@
 // const APPID = process.env.VUE_APP_APPID
 module.exports = {
   lintOnSave: false,
-  publicPath: process.env.NODE_ENV === "production" ? "/Painter-aggregation/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-project/" : "/",
   filenameHashing: false,
 
   css: {
