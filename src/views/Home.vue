@@ -22,7 +22,6 @@
                             <div class="text2">{{ item.authoer }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
-                            <div class="text5">{{ item.pagecount }}</div>
                         </div>
                     </div>
 
@@ -41,7 +40,6 @@
                             <div class="text2">{{ item.authoer }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
-                            <div class="text5">{{ item.pagecount }}</div>
                         </div>
                     </div>
 
@@ -60,7 +58,6 @@
                             <div class="text2">{{ item.authoer }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
-                            <div class="text5">{{ item.pagecount }}</div>
                         </div>
                     </div>
 
@@ -72,53 +69,88 @@
 
 <script lang="ts">
 import { ref } from "vue";
+interface Book {
+    id: number
+    img_url: string
+    name: string
+    authoer: string
+    laster: string
+    update: string
+    class: string
+    serialstatus: string
+
+}
 export default {
     setup(props) {
 
-        const items = ref(
+        const items = ref<Book[][]>(
             [
                 [
                     {
                         id: 0,
-                        img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
-                        name: '鍾情於你(校園H)',
-                        authoer: "鹿時安",
-                        laster: "番外2：孕期舔穴",
-                        update: "2022-11-24",
-                        pagecount: "835頁"
+                        img_url: "https://img.czbooks.net/thumbnail/d10891d5c97f8f29ec9f9c3f4b9f02e8.jpg",
+                        name: '《淫術煉金士》',
+                        authoer: "帥呆",
+                        laster: "第七話　清算血債",
+                        update: "2021-01-05",
+                        class: '玄幻奇幻',
+                        serialstatus: '連載中'
                     }, {
                         id: 0,
-                        img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
-                        name: '鍾情於你(校園H)',
-                        authoer: "鹿時安",
-                        laster: "番外2：孕期舔穴",
-                        update: "2022-11-24",
-                        pagecount: "835頁"
+                        img_url: "https://img.uukanshu.com/fengmian/2018/12/636795491883547380.jpg",
+                        name: '領主太邪惡',
+                        authoer: "我愛挖坑",
+                        laster: " 第七百九十四章 天地封神",
+                        update: "2018-12-09",
+                        class: '玄幻奇幻',
+                        serialstatus: '連載中'
                     }, {
                         id: 0,
-                        img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
-                        name: '鍾情於你(校園H)',
-                        authoer: "鹿時安",
-                        laster: "番外2：孕期舔穴",
-                        update: "2022-11-24",
-                        pagecount: "835頁"
+                        img_url: "https://img.uukanshu.com/fengmian/2016/6/636011982080973434.jpg",
+                        name: '《萌寶快遞：拐個媽咪送爹地》',
+                        authoer: "密雲不雨",
+                        laster: "第五千九百零二章 葫蘆娃",
+                        update: "2019-04-15",
+                        class: '女生同人',
+                        serialstatus: '連載中'
                     }, {
                         id: 0,
-                        img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
-                        name: '鍾情於你(校園H)',
-                        authoer: "鹿時安",
-                        laster: "番外2：孕期舔穴",
-                        update: "2022-11-24",
-                        pagecount: "835頁"
+                        img_url: "https://img.uukanshu.com/static/www/images/fengmian.jpg",
+                        name: '超文明進化領主',
+                        authoer: "雲夢大領主",
+                        laster: "",
+                        update: "2018-02-24",
+                        class: '靈異玄幻',
+                        serialstatus: '連載中'
                     }, {
                         id: 0,
-                        img_url: "https://cdn0.po18.tw/bc/11/759947/O20220412193928.jpg",
-                        name: '鍾情於你(校園H)',
-                        authoer: "鹿時安",
-                        laster: "番外2：孕期舔穴",
-                        update: "2022-11-24",
-                        pagecount: "835頁"
+                        img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
+                        name: '全民領主：我的亡靈會裂變',
+                        authoer: "星殞落",
+                        laster: "",
+                        update: "2022-12-21",
+                        class: '玄幻奇幻',
+                        serialstatus: '連載中'
+                    }, {
+                        id: 0,
+                        img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
+                        name: '全民領主：我的亡靈會裂變',
+                        authoer: "星殞落",
+                        laster: "",
+                        update: "2022-12-21",
+                        class: '玄幻奇幻',
+                        serialstatus: '連載中'
+                    }, {
+                        id: 0,
+                        img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
+                        name: '全民領主：我的亡靈會裂變',
+                        authoer: "星殞落",
+                        laster: "",
+                        update: "2022-12-21",
+                        class: '玄幻奇幻',
+                        serialstatus: '連載中'
                     },
+
 
                 ]
             ])
