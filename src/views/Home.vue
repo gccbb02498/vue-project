@@ -19,7 +19,7 @@
                                     {{ item.name }}
                                 </router-link>
                             </div>
-                            <div class="text2">{{ item.authoer }}</div>
+                            <div class="text2">{{ item.author }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
                         </div>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="text">
                             <div class="text1"><a href="">{{ item.name }}</a></div>
-                            <div class="text2">{{ item.authoer }}</div>
+                            <div class="text2">{{ item.author }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
                         </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="text">
                             <div class="text1"><a href="">{{ item.name }}</a></div>
-                            <div class="text2">{{ item.authoer }}</div>
+                            <div class="text2">{{ item.author }}</div>
                             <div class="text3">{{ item.laster }}</div>
                             <div class="text4">{{ item.update }}</div>
                         </div>
@@ -73,7 +73,7 @@ interface Book {
     id: number
     img_url: string
     name: string
-    authoer: string
+    author: string
     laster: string
     update: string
     class: string
@@ -90,7 +90,7 @@ export default {
                         id: 0,
                         img_url: "https://img.czbooks.net/thumbnail/d10891d5c97f8f29ec9f9c3f4b9f02e8.jpg",
                         name: '《淫術煉金士》',
-                        authoer: "帥呆",
+                        author: "帥呆",
                         laster: "第七話　清算血債",
                         update: "2021-01-05",
                         class: '玄幻奇幻',
@@ -99,7 +99,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/fengmian/2018/12/636795491883547380.jpg",
                         name: '領主太邪惡',
-                        authoer: "我愛挖坑",
+                        author: "我愛挖坑",
                         laster: " 第七百九十四章 天地封神",
                         update: "2018-12-09",
                         class: '玄幻奇幻',
@@ -108,7 +108,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/fengmian/2016/6/636011982080973434.jpg",
                         name: '《萌寶快遞：拐個媽咪送爹地》',
-                        authoer: "密雲不雨",
+                        author: "密雲不雨",
                         laster: "第五千九百零二章 葫蘆娃",
                         update: "2019-04-15",
                         class: '女生同人',
@@ -117,7 +117,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/static/www/images/fengmian.jpg",
                         name: '超文明進化領主',
-                        authoer: "雲夢大領主",
+                        author: "雲夢大領主",
                         laster: "",
                         update: "2018-02-24",
                         class: '靈異玄幻',
@@ -126,7 +126,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
                         name: '全民領主：我的亡靈會裂變',
-                        authoer: "星殞落",
+                        author: "星殞落",
                         laster: "",
                         update: "2022-12-21",
                         class: '玄幻奇幻',
@@ -135,7 +135,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
                         name: '全民領主：我的亡靈會裂變',
-                        authoer: "星殞落",
+                        author: "星殞落",
                         laster: "",
                         update: "2022-12-21",
                         class: '玄幻奇幻',
@@ -144,7 +144,7 @@ export default {
                         id: 0,
                         img_url: "https://img.uukanshu.com/fengmian/2022/2/637805848283261471.jpg",
                         name: '全民領主：我的亡靈會裂變',
-                        authoer: "星殞落",
+                        author: "星殞落",
                         laster: "",
                         update: "2022-12-21",
                         class: '玄幻奇幻',

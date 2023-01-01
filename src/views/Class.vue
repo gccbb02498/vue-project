@@ -1,54 +1,35 @@
-﻿<template>
+<template>
     <el-main>
         <el-container>
-            <div>
-                <div>
-                    <el-image :src="data.src" fit="fill" :lazy="true"></el-image>
-                </div>
-                <div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>連載狀態</td>
-                                <td>{{ data.status }}</td>
-                            </tr>
-                            <tr>
-                                <td>收 藏 數</td>
-                                <td>{{ data.favorites }}</td>
-                            </tr>
-                            <tr>
-                                <td>觀 看 數</td>
-                                <td>{{ data.views }}</td>
-                            </tr>
-                            <tr>
-                                <td>更新時間</td>
-                                <td>{{ data.update }}</td>
-                            </tr>
-                            <tr>
-                                <td>分 類</td>
-                                <td>{{ data.classification }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <span>{{ data.name }}</span>
-                    <span>作者： {{ data.author }}</span>
-                </div>
-                <div>
-                    <span v-html="data.description"></span>
-                </div>
-            </div>
+            <ul>
+                <li v-for="(item, index) in items">
+                    <div class="item">
+                        <div class="item-coverwrapper">
+                            <router-link :to="{ name: 'Book', params: { id: item.id, }, }">
+                                <div class="item-thumbnail">
+                                    <img :src="item.src" />
+                                </div>
+                                <div class="item-title">{{ item.name }}</div>
+                            </router-link>
+                        </div>
+                        <div class="item-author">{{ item.author }}</div>
+                        <div class="item-newest"></div>
+                        <div class="item-date">{{ item.update }}</div>
+                        <div class="item-status">{{ item.status }}</div>
+
+                    </div>
+                </li>
+            </ul>
+
         </el-container>
     </el-main>
 </template>
 
 <script lang="ts">
-
-import { defineComponent, reactive, ref } from 'vue'
-import moment from 'moment'
-import { useRoute } from 'vue-router'
-declare type Book = {
+import store from "../state/store";
+import { reactive, ref, watch } from "vue";
+import { useRoute } from "vue-router";
+interface Book {
     id: number
     src: string
     name: string
@@ -61,12 +42,11 @@ declare type Book = {
     views: number
     description: string
 }
-
-export default defineComponent({
-    setup() {
-        const route = useRoute()
-        console.log(route.params)
-        const items = ref<Array<Book>>([
+export default {
+    setup(props) {
+        const route = useRoute();
+        const state = store.state;
+        const datas = ref<Array<Book>>([
             {
                 id: 1,
                 name: "《放開那個女巫》",
@@ -176,25 +156,21 @@ export default defineComponent({
                 description: "評選TA為影響自己最深的作品 一個超級武者,在玩網遊時誤選了法師,習慣以暴製暴,以力降力的他,隻能將錯就錯,搖身一變,成為一個近戰暴力法師,當力量與法術完美結合時,一條新的遊戲之路,被他打開了!\n    火球術？閃電鏈？寒霜冰鏡……等等，我是來練功夫的，法術關我什麽事？我是法師？哦，對，我是法師。不過……你真的堅信我是法師？好吧，看刀！看劍！看拳！看暗器！什麽？你又說我不是法師？如果你不相信，我證明給你看；如果你相信，我表演給你看:法師會功夫，誰也擋不住！"
             }
         ])
-        const data = ref<Book>({
-            id: 0,
-            src: '',
-            name: '',
-            author: '',
-            update: '',
-            classification: '',
-            status: '',
-            favorites: 0,
-            views: 0,
-            description: ''
-        })
-        data.value = items.value.find(x => { return x.id.toString() == route.params.id }) as Book
-        return { data };
-    },
 
-})
+        const items = ref<Array<Book>>();
+        watch(() =>
+            state.name, (val, old) => {
+                console.log(val, old)
+                items.value = datas.value.filter(x => { return store.state.name == "" ? true : x.classification == route.params.name })
+            }
+        )
+
+        return {
+            items
+        }
+    }
+};
 </script>
-
-<style lang="scss" src="../assets/css/_book.scss" scoped>
+<style lang="scss" src="../assets/css/_class.scss" scoped>
 
 </style>

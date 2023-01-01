@@ -1,15 +1,15 @@
-import { createRouter, createWebHistory, routerKey } from "vue-router";
+import { createRouter, createWebHashHistory, createWebHistory, routerKey } from "vue-router";
 
 const routes = [
     {
-        path: "",
+        path: "/",
         name: "Home",
         component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
     },
     {
-        path: "/:name",
-        name: "Home",
-        component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
+        path: "/class/:name",
+        name: "Class",
+        component: () => import(/* webpackChunkName: "home" */ "../views/Class.vue"),
     },
     {
         path: "/book/:id",
@@ -19,15 +19,15 @@ const routes = [
     {
         path: "/404",
         component: () => import(/* webpackChunkName: "404" */ "../views/404.vue"),
-    },
-    {
-        path: "/:pathMatch(.*)",
-        redirect: '/404'
     }
+    // {
+    //     path: "/:pathMatch(.*)",
+    //     redirect: '/404'
+    // }
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
 });
 export default router;
